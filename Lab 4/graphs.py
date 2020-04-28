@@ -36,20 +36,14 @@ class DiGraph:
         """
         Returns true if u is in the graph, false otherwise.
         """
-        if u in self._edges:
-            return True
-        else:
-            return False 
-        
+        return True if u in self._edges else False
+    
     def edge_exists(self, u, v):
         """
         Returns true if there is an edge from u to v in the graph, false otherwise.
         If u or v are not in the graph, false is returned.
         """
-        if v in self._edges[u]:
-            return True
-        else:
-            return False 
+        return True if v in self._edges[u] else False
    
     def get_outgoing_edges(self, u):
         """
@@ -68,4 +62,4 @@ class DiGraph:
         Counts the number of edges in the graph
         """
         lst = map(len, self._edges.values())
-        return sum(lst)  
+        return sum(lst) 
