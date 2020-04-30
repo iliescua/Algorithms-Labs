@@ -11,9 +11,6 @@ def jump(lst, val):
     while (lst[int(step)] < val and int(step) < size):
         track = step
         step += step
-        #Reaching the end of list without finding the value
-        if track >= size:
-            return -1
 
     #If step is > size we are checking the previous block for the value
     while lst[int(track)] < val:
