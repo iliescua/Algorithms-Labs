@@ -1,14 +1,15 @@
 import math
 
-def jump(lst, val, size):
+def jump(lst, val):
+    size = len(lst)
     #Determines the step size for how many elements to jump over 
     step = math.sqrt(size)
     #Keeps track of the block we are on
     track = 0
 
     #Searching to see which block of size sqrt(size) would contain the value
-    while lst[int(step)] < val:
-        track = int(step)
+    while lst[int(min(step, size) - 1)] < val:
+        track = step
         step += step
         #Reaching the end of list without finding the value
         if track >= size:
@@ -18,7 +19,7 @@ def jump(lst, val, size):
     while lst[int(track)] < val:
         track+=1
         #If we checked whole block unsuccessfully
-        if track > val:
+        if track == min(step, size):
             return -1
     
     #If value is found in the list return it
