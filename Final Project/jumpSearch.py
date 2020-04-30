@@ -24,5 +24,5 @@ def jump(lst, val, size):
     #If value is found in the list return it
     if lst[int(track)] == val:
         return track
-    
-    return -1
+    else:
+        return -1
