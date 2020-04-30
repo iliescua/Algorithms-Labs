@@ -8,22 +8,19 @@ def jump(lst, val):
     track = 0
 
     #Searching to see which block of size sqrt(size) would contain the value
-    while lst[int(min(step, size) - 1)] < val:
+    while (lst[int(step)] < val and int(step) < size):
         track = step
         step += step
         #Reaching the end of list without finding the value
         if track >= size:
             return -1
 
-    #If step is > size we are checking the previous blocl for the value
+    #If step is > size we are checking the previous block for the value
     while lst[int(track)] < val:
         track+=1
-        #If we checked whole block unsuccessfully
-        if track == min(step, size):
-            return -1
+        #If we find the value in the block
+        if lst[int(track)] == val:
+            return track
     
-    #If value is found in the list return it
-    if lst[int(track)] == val:
-        return track
-    else:
-        return -1
+    #Returns -1 if value is not found in the list
+    return -1
