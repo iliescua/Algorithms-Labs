@@ -20,4 +20,4 @@ def jump(lst, val):
             return track
     
     #Returns -1 if value is not found in the list
-    return -1
+    return None
