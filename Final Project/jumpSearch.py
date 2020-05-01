@@ -19,5 +19,5 @@ def jump(lst, val):
         if lst[int(track)] == val:
             return track
     
-    #Returns -1 if value is not found in the list
+    #Returns None if value is not found in the list
     return None
