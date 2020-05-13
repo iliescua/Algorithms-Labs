@@ -216,8 +216,8 @@ class DiGraph:
         """
         Creates 2-tuple of adjacent verticies in an edge
         """
-        cnt = 1
-        while (cnt < self.count_edges):
-            tup = (self._edges[cnt -1], self._edges[cnt])
-            cnt += 1
-        return tup
+        edgeSet = set()
+        for first, edge_set in self._edges.items():
+            for nextVer in self._edges[first]:
+                edgeSet.add((first, nextVer))
+        return edgeSet
